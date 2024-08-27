@@ -1,7 +1,920 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy World Record</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.capitalone.com/assets/enterprise/css/gravity-core/grv-core.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
+
+    <style>
+        body {
+            font-family: Optimist, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer #footnotes {
+            /* Target just the #footnotes text within the footer */
+            font-size: .7em;
+            color: rgba(128, 128, 128, 0.7);
+            padding: 2em;
+            /* Use 'em' for relative padding */
+            text-align: left;
+            width: 100%;
+            /* Ensure full width for proper background and padding */
+            box-sizing: border-box;
+            /* Include padding and border in element's total width/height */
+            background-color: #ffffff;
+        }
+
+
+
+
+        .header {
+            display: flex;
+            justify-content: center;
+            /* Center the content horizontally */
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-title {}
+
+        .khanCap-logo {
+            width: 42em;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gwr-logo {
+            width: 20em;
+        }
+
+
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 105px 150px 105px;
+        }
+
+        .white-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 89%;
+            max-width: 800px;
+            padding-left: 98px;
+            padding-right: 98px;
+        }
+
+        .module {
+            margin: 10px;
+            padding: 30px;
+        }
+
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            z-index: 1000;
+            width: calc(100% + 196px);
+            /* Extend width beyond container by padding amount */
+            margin-left: -98px;
+            /* Negative margin to offset the extra width on the left */
+            margin-right: -98px;
+            /* Negative margin to offset the extra width on the right */
+        }
+
+
+        .button {
+            background-color: #005a8c;
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .startButton {
+            background-color: #005a8c;
+            color: white;
+            border: none;
+            padding: 15px 60px !important;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button:disabled {
+            background-color: rgba(0, 90, 140, 0.2);
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .button:disabled::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            /* Adjust for the border width */
+            left: -2px;
+            /* Adjust for the border width */
+            width: calc(100% + 4px);
+            /* Add border width to both sides */
+            height: calc(100% + 4px);
+            /* Add border width to both sides */
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+
+        .button-outline {
+            background-color: transparent;
+            color: #005a8c;
+            border: 2px solid #005a8c;
+        }
+
+        .timer {
+            font-size: 38px;
+            font-weight: 200;
+            font-family: roboto mono, arial;
+            color: #005a8c;
+        }
+
+        .timer-after {
+            font-size: 18px;
+            font-weight: 200;
+            font-family: roboto mono, optimist, arial;
+            color: #59A545;
+        }
+
+        #course,
+        #instructions,
+        #survey,
+        #pre-instructions {
+            display: none;
+        }
+
+        .module {
+            margin-bottom: 20px;
+        }
+
+        #completionCode,
+        #surveyLink {
+            display: none;
+            color: #005a8c;
+        }
+
+        #surveyFrame {
+            width: 100%;
+            height: 3000px;
+            border: none;
+        }
+
+        h1 {
+            color: #005a8c;
+            font-size: 40px;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        h2 {
+            color: #005a8c;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #005a8c;
+            font-size: 18px;
+            font-weight: 200;
+        }
+
+        #event-title {
+            color: #005a8c;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        #event-title span {
+            color: #005a8c;
+            font-size: 1em;
+            font-weight: 300;
+        }
+
+        .instructions-content {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #mainGraphic {
+            max-width: 100%;
+            /* Ensure the image doesn't exceed its container width */
+            height: 40em;
+            /* Automatically adjust height to maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+
+        #instructionsGraphic {
+            max-width: 120%;
+            /* Ensure the image doesn't exceed its container width */
+            height: 40em;
+            /* Automatically adjust height to maintain aspect ratio */
+            margin-bottom: 0px;
+        }
+
+        #surveyButton {
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .centered-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .centered-content iframe {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            display: none;
+        }
+
+        #surveyImage {
+            height: 85px;
+            cursor: pointer;
+
+        }
+
+        #completionCode {
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        #completionCode::before {
+            content: "Your code is: ";
+            font-weight: 200;
+        }
+
+
+        .date-based-content {
+            display: none;
+            padding: 20px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .dev-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        #countdown {
+            font-family: 'Roboto Mono', Courier, monospace;
+            font-size: 5em;
+            margin-top: 20px;
+            color: #013D5B;
+        }
+
+        add-to-calendar-button.add-to-calendar.atcb-light {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .sticky-image {
+            position: fixed;
+            /* Stick it to the viewport */
+            top: 0;
+            /* Align to the top edge */
+            right: 0;
+            /* Align to the right edge */
+            width: 20%;
+            /* Adjust the width as needed */
+            z-index: -1000;
+            /* Ensure it's on top of other content */
+        }
+
+        .sticky-image-right {
+            position: fixed;
+            /* Stick it to the viewport */
+            top: 13%;
+            /* Align to the middle vertically */
+            right: 0;
+            /* Align to the right edge */
+            transform: translateY(-50%);
+            /* Adjust for vertical centering */
+            width: 4%;
+            /* Adjust the width as needed */
+            z-index: 1000;
+            /* Ensure it's on top of other content */
+        }
+
+        .button.button-outline:hover {
+            background-color: #005a8c; /* Darker blue on hover */
+            color: white;
+        }
+    </style>
+</head>
+
 <body>
-<h1>Hello World test</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <img src="purple-right.svg" alt="Sticky Image" class="sticky-image">
+    <img src="blue-side.svg" alt="Sticky Image Right" class="sticky-image-right">
+
+    <div class="animated-background" id="animatedBackground"></div>
+    <div class="header">
+        <div class="main-title" onclick="location.reload()" style="color:#d8cbba; cursor: pointer;">
+           <p id="event-title">Most users to take an online financial literacy lesson in 24 hours<span> — 1 PM CST Monday, Sept. 23 – 1PM CST Tuesday, Sept. 24</span></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="landing">
+            <div class="centered-content"> <img id="mainGraphic" src="gwr-logo.svg" alt="Main Graphic">
+
+
+
+                <div id="preContainer" class="date-based-content">
+                    <h2>The Event Starts Soon!</h2>
+                    <add-to-calendar-button name="Capital One and Khan Academy presents: Let’s go Set a Record"
+                        options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
+                        startDate="2024-08-17" endDate="2024-08-17" startTime="10:15" endTime="23:30"
+                        timeZone="America/Chicago"
+                        description="Join us for an exciting event where we aim to set a record together! Stay tuned for more details about the event.">
+
+                        <button id="add-to-calendar">Add to Calendar</button>
+                        <button id="startButton" class="button" onclick="showPreInstructions()">GET STARTED</button>
+
+                    </add-to-calendar-button>
+
+
+                    <div id="countdown"></div>
+                    <button class="dev-button" onclick="showContainer('currentContainer')"></button>
+                </div>
+
+                <div id="currentContainer" class="date-based-content">
+                    <button id="startButton" class="button" onclick="showPreInstructions()">GET STARTED</button>
+                    <button class="dev-button" onclick="showContainer('postContainer')"></button>
+                    <img alt="Pixel" src="https://bit.ly/gwr-module-start" style="display:none;">
+
+                </div>
+
+                <div id="postContainer" class="date-based-content">
+                    <h2>Post-Event Content</h2>
+                    <p>This content is shown after 8/12/24 8:30 PM.</p>
+                    <button class="dev-button" onclick="showContainer('preContainer')"></button>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <div id="pre-instructions" class="white-box">
+            <h2>Our Partnership with Khan Academy</h2>
+            <p>Capital One is supporting with Khan Academy to deliver a Financial Literacy challenge that breaks down
+                complex financial concepts into a series of self-paced units. At Capital One, we believe that people
+                deserve to feel confident, capable and in control when it comes to their money — and we know that
+                financial literacy is one key to helping people achieve financial well-being. By supporting with
+                Khan Academy, a trusted leader in online learning, we are helping provide access to free, quality
+                financial education so that all Americans can get one step closer to financial well-being.</p>
+
+
+            <h2>Setting a world Record with Financial Literacy</h2>
+            <p>Join Capital One as we work to set a world record utilizing Khan Academy's financial literacy resources!
+                The following financial literacy world delves into effective budgeting and savings strategies, provides
+                advice on buying a car, and explores smart ways to pay for college. By taking this challenge, you will
+                start on your financial journey to learn valuable skills to make informed decisions, while also playing
+                a part in setting a Guinness World Record. </p>
+
+            <p>Hear below from Sal Khan why Financial Literacy is important and click the 'Begin challenge' button to
+                take
+                a step toward securing your financial future!</p>
+
+            <div class="centered-content"><iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/Lys4EVugJmk?si=kPBKovYnSsJwHn7S" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            <br><br>
+            <div class="centered-content">
+                <button id="continueToInstructions" class="button" onclick="showInstructions()">Continue to
+                    Instructions</button>
+                <br>
+            </div>
+        </div>
+
+        <div id="instructions" class="white-box">
+            <div class="centered-content">
+                <button class="button button-outline" onclick="showPreInstructions()">Back to Partnership Page</button>
+            </div>
+            <br>
+            <div class="partnership-content">
+                <br>
+                <div class="centered-content"><img id="instructionsGraphic" src="instructions.svg"></div>
+                <br>
+                <div class="centered-content"><button id="resumeButton" src="https://bit.ly/gwr-module-start" class="button" onclick="startCourse()">Begin
+                        challenge</button></div>
+
+    
+
+                <div id="imageContainer"></div>
+                <br><br><br><br>
+            </div>
+        </div>
+
+        <div id="course" class="white-box">
+
+            <div class="nav-bar">
+                <button class="button" onclick="showInstructions()">Instructions</button>
+                <button class="button button-outline" id="prevButton" onclick="changeModule(-1)">Previous</button>
+                <div class="timer" id="timer">00:00:00</div>
+                <button class="button button-outline" id="nextButton" onclick="changeModule(1)">Next</button>
+                <button class="button" id="surveyButton" onclick="showSurvey()">Submit Entry</button>
+                <div onclick="showSurvey()">
+
+                    <img id="surveyImage" src="confetti-button.gif" alt="Submit Entry" style="display: none;">
+                </div>
+            </div>
+
+
+            <div id="modules">
+
+
+                
+
+
+                <div class="module" id="module1">
+
+
+                    <br><img src="coins-animation.gif"
+                    alt="Coins Animation"
+                    style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 280px;">
+                    <h1>Budgeting & Savings</h1>
+                    <h2>What is a Budget?</h2>
+                    <p>A budget is a plan that helps you manage your money. It
+                        shows you how much money you have, how
+                        much money you need to spend on different things, and how much money you can save or use for
+                        other goals. A budget can help you make smart decisions with your money and avoid problems like
+                        overspending, debt, or running out of money.</p>
+                    <div style="clear: both;"></div>
+                    <h2>Why Do I Need a Budget?</h2>
+                    <p>Money is a limited resource, and you probably aren't able to buy everything you want or need with
+                        the money you have. It's important to prioritize your expenses and choose what is most important
+                        for you and your family. A budget can help!</p>
+
+                    <div class="centered-content"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/LKxOamnP8J4?si=Xm_nboTNoJ6qeUuR"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <br>
+
+                    <div class="centered-content"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/qQLLDPAEzT0?si=D6qJea2LhiCscjIC"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+
+                    <br><br><img src="debt.svg"
+                    alt="Debt"
+                    style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
+                    <h2>Why and How to Save</h2>
+                    <p>Saving money is very important for a number of reasons. First, it allows you to have a safety net
+                        in case of emergencies. For example, if you suddenly lose your job or have an unexpected medical
+                        bill, having money saved up can help you avoid falling into debt.</p>
+                    <p>Another reason it's important to save money is so you can reach your goals. If you want to buy a
+                        car or a house, save for college, or travel to a new place, it often takes time to save up
+                        enough money to do those things. By saving regularly, you're taking steps towards achieving
+                        those goals.
+                    </p><br>
+                    <div class="centered-content"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/cnW_HDIBmz4?si=fXrKrR3zGnJRJBjP"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><i>Continue your financial literacy journey with<a
+                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
+                                    Academy.</i></a></p>
+                    </div>
+                </div>
+
+                <div class="module" id="module2" style="display:none;">
+                    <br><img src="car-buying.svg"
+                    alt="Car Buying"
+                    style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
+                    <h1>Buying a Car</h1>
+                    <p>Buying a car can sometimes feel overwhelming and stressful -- from the pushy sales talk, to
+                        making quick decisions that may not always be in your best interest. But that's about to change
+                        with this unit. You'll learn how to prepare for buying a car, arm yourself with knowledge, and
+                        most importantly, make decisions that are right for you.</p><br>
+                    <div class="centered-content"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/p0mQOJvbT78?si=gVm5WKOR2QSjsc4U"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                    <div class="centered-content">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/5BT8HlppkCU?si=N0Ybv9oLQKfAgVNW"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><i>Continue your financial literacy journey with<a
+                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
+                                    Academy.</i></a></p>
+
+                    </div>
+                </div>
+
+                <div class="module" id="module3" style="display:none;">
+                    <br><img src="college.svg"
+                    alt="Saving for College"
+                    style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
+                    <h1>Paying for College</h1>
+                    <p>Investing in your career and education is an important way to help yourself succeed and reach
+                        your
+                        goals in life. By learning new skills and gaining knowledge, you can open up opportunities for
+                        better jobs
+                        and a brighter future.</p><br>
+                    <div class="centered-content"><iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/SAjZj3ZwebA?si=3xEBdGfuuaxeT9JC"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="referrerpolicy=" strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <br>
+                    <div class="centered-content">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/9TtKUydRfDM?si=l2WM8H1c6vCaf3E5"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p><i>Continue your financial literacy journey with<a
+                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
+                                    Academy.</i></a></p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="survey" class="white-box">
+            <button id="backToModules" class="button" onclick="showModules()">Back to Modules</button>
+            <div class="centered-content">
+                <div id="completionCode"></div>
+            </div>
+            <br>
+
+            <iframe id="surveyFrame" src="https://survey.alchemer.com/s3/7940387/Khan-GWR"></iframe>
+        </div>
+
+        <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">
+    </div>
+    <script>
+
+
+
+
+
+
+
+
+    </script>
+    <script>
+        let timer;
+        let seconds = 0;
+        const totalTime = 5; // set to 30 minutes
+        let currentModule = 1;
+        let timerDone = false;
+        let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
+
+
+
+        function checkEventDate() {
+            const eventEndDate = new Date('2024-08-30T23:59:59'); // Set the event end date here
+            const currentDate = new Date();
+
+            if (currentDate > eventEndDate) {
+                document.body.innerHTML = '<div class="container"><div class="white-box"><h1>This event has ended</h1><p>Thank you for your interest in participating in our effort to set a record for most users to take an online financial literacy lesson in 24 hours. The window to participate has passed and the record has been achieved!</p><p>If you are interested in taking the next step in your financial literacy journey, <a href="https://www.capitalone.com/learn-grow/money-management/khan-academy-financial-literacy-course/">dive into the Khan Academy challenge here and learn more.</a></p></div></div>';
+            }
+        }
+
+        window.onload = function () {
+            checkEventDate();
+            const savedSeconds = localStorage.getItem('timerSeconds');
+            const savedTimerDone = localStorage.getItem('timerDone');
+            if (savedSeconds) {
+                seconds = parseInt(savedSeconds);
+                document.getElementById('timer').textContent = formatTime(seconds);
+            }
+            if (savedTimerDone === 'true') {
+                timerDone = true;
+                showCompletionCode();
+                document.getElementById('animatedBackground').style.display = 'block';
+                document.getElementById('surveyButton').style.opacity = '1';
+                document.getElementById('surveyButton').style.pointerEvents = 'auto';
+                document.getElementById('surveyButton').style.backgroundColor = '#4CAF50';
+            }
+        };
+
+        function showPreInstructions() {
+            document.getElementById('landing').style.display = 'none';
+            document.getElementById('pre-instructions').style.display = 'block';
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('course').style.display = 'none';
+            document.getElementById('survey').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function showInstructions() {
+            document.getElementById('pre-instructions').style.display = 'none';
+            document.getElementById('landing').style.display = 'none';
+            document.getElementById('instructions').style.display = 'block';
+            document.getElementById('course').style.display = 'none';
+            document.getElementById('survey').style.display = 'none';
+            document.getElementById('resumeButton').textContent = timerDone ? 'Modules' : 'Begin Challenge';
+            window.scrollTo(0, 0);
+        }
+
+        function startCourse() {
+            document.getElementById('instructions').style.display = 'none';
+            document.getElementById('course').style.display = 'block';
+            if (!timerDone) {
+                startTimer();
+            }
+            window.scrollTo(0, 0);
+        }
+        function startTimer() {
+            timer = setInterval(() => {
+                seconds++;
+                document.getElementById('timer').textContent = formatTime(seconds);
+                localStorage.setItem('timerSeconds', seconds);
+                if (seconds >= totalTime) {
+                    clearInterval(timer);
+                    document.getElementById('timer').textContent = "Finished!";
+                    document.getElementById('timer').style.color = "#59A545";
+                    document.getElementById('surveyButton').style.display = 'none';
+                    showCompletionCode();
+                    timerDone = true;
+                    localStorage.setItem('timerDone', 'true');
+                    document.getElementById('resumeButton').textContent = 'Resume Modules';
+                    document.getElementById('animatedBackground').style.display = 'block';
+                    document.getElementById('surveyImage').style.display = 'block'; // Show surveyImage
+                } else {
+                    document.getElementById('surveyImage').style.display = 'none'; // Hide surveyImage if timer is running
+                    document.getElementById('surveyButton').style.display = 'block';
+                }
+            }, 1000);
+        }
+        function startTimer() {
+            timer = setInterval(() => {
+                seconds++;
+                document.getElementById('timer').textContent = formatTime(seconds);
+                localStorage.setItem('timerSeconds', seconds);
+                if (seconds >= totalTime) {
+                    clearInterval(timer);
+                    document.getElementById('timer').textContent = "Finished!";
+                    document.getElementById('timer').style.color = "#59A545";
+
+                    // Hide the surveyButton when the timer expires
+                    document.getElementById('surveyButton').style.display = 'none';
+
+                    // Show the completion code and survey image when the timer EXPIRES
+                    showCompletionCode();
+
+                    timerDone = true;
+                    localStorage.setItem('timerDone', 'true');
+                    document.getElementById('resumeButton').textContent = 'Resume Modules';
+                    document.getElementById('animatedBackground').style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
+            const mins = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${hours}:${mins}:${secs}`;
+        }
+
+        function changeModule(direction) {
+            document.getElementById(`module${currentModule}`).style.display = 'none';
+            currentModule += direction;
+            if (currentModule < 1) currentModule = 1;
+            if (currentModule > 3) currentModule = 3;
+            document.getElementById(`module${currentModule}`).style.display = 'block';
+            updateNavButtons();
+            window.scrollTo(0, 0);
+        }
+
+        function updateNavButtons() {
+            document.getElementById('prevButton').disabled = (currentModule === 1);
+            document.getElementById('nextButton').disabled = (currentModule === 3);
+        }
+
+        function showCompletionCode() {
+            document.getElementById('completionCode').innerHTML = `${completionCode}`;
+            document.getElementById('surveyButton').style.display = 'none';
+            document.getElementById('surveyImage').style.display = 'block';
+
+            document.getElementById('completionCode').style.display = 'block';
+            document.getElementById('surveyLink').style.display = 'block';
+
+        }
+        //Load survey into iframe
+        function loadSurveyInIframe(event) {
+            event.preventDefault(); // Prevent default link behavior
+            document.getElementById('surveyFrame').src = document.getElementById('surveyAnchor').href;
+        }
+
+        function showSurvey() {
+            document.getElementById('course').style.display = 'none';
+            document.getElementById('survey').style.display = 'block';
+            window.scrollTo(0, 0); // Scroll to top for better user experience
+        }
+
+        function showModules() {
+            document.getElementById('survey').style.display = 'none';
+            document.getElementById('course').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        updateNavButtons();
+
+
+        function resetTimer() {
+            clearInterval(timer); // Stop the timer
+            seconds = 0;         // Reset seconds to 0
+            timerDone = false;   // Mark the timer as not done
+
+            // Reset timer display
+            document.getElementById('timer').textContent = '00:00:00';
+            document.getElementById('timer').style.color = '#005a8c';
+
+            // Reset completion elements
+            document.getElementById('completionCode').style.display = 'none'; // Hide completion code
+            document.getElementById('surveyImage').style.display = 'none';   // Hide survey image
+            document.getElementById('surveyButton').style.display = 'block'; // Show survey button
+            document.getElementById('animatedBackground').style.display = 'none';
+
+            // Clear saved data
+            localStorage.removeItem('timerSeconds');
+            localStorage.removeItem('timerDone');
+
+            // Go back to the initial landing page
+            showPreInstructions();
+
+            // Alert the user
+            alert('Timer has been reset.');
+        }
+
+
+        const startDate = new Date('2024-08-23T11:09:00'); // Set your desired start date and time here
+        const endDate = new Date('2024-09-26T13:00:00');   // Make sure endDate is AFTER startDate
+
+        let showPreEventContent = false; // Set to true to force pre-event content
+
+        function updateContent() {
+            const now = new Date();
+
+            if (showPreEventContent || now < startDate) {
+                showContainer('preContainer');
+                updateCountdown();
+            } else if (now >= startDate && now < endDate) {
+                showContainer('currentContainer');
+            } else {
+                // Hide everything and display the default message
+                document.body.innerHTML = '<div class="container"><div class="white-box"><h1>This event has ended</h1><p>Thank you for your interest in participating in our effort to set a record for most users to take an online financial literacy lesson in 24 hours. The window to participate has passed and the record has been achieved!</p><p>If you are interested in taking the next step in your financial literacy journey, <a href="https://www.capitalone.com/learn-grow/money-management/khan-academy-financial-literacy-course/">dive into the Khan Academy course here and learn more.</a></p></div></div>';
+            }
+        }
+
+
+        function showContainer(containerId) {
+            document.querySelectorAll('.date-based-content').forEach(container => {
+                container.style.display = 'none';
+            });
+            document.getElementById(containerId).style.display = 'block';
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = startDate - now;
+            const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+
+            document.getElementById('countdown').textContent
+                =
+                `${daysLeft.toString().padStart(2, '0')}:${hoursLeft.toString().padStart(2, '0')}:${minutesLeft.toString().padStart(2, '0')}:${secondsLeft.toString().padStart(2,
+                    '0')}`;
+        }
+
+        // Add to Calendar Functionality
+        document.getElementById('add-to-calendar').addEventListener('click', function () {
+            let icsContent = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//Capital One and Khan Academy//Event//EN",
+                "BEGIN:VEVENT",
+                "UID:" + new Date().getTime(),
+                "DTSTAMP:" + new Date().toISOString().replace(/-|:|\.\d+/g, ''),
+                "DTSTART:20240924T130000Z",
+                "DTEND:20240925T130000Z",
+                "SUMMARY:Capital One and Khan Academy presents: Let’s go Set a World Record",
+                "DESCRIPTION:Join us for an exciting event where we aim to set a World record together! Stay tuned for more details about the event.",
+                "LOCATION:Placeholder Location",
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\n");
+
+            let blob = new Blob([icsContent], { type: 'text/calendar' });
+            let link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'event.ics';
+            link.click();
+        });
+
+        // Update content immediately and then every second
+        updateContent();
+        setInterval(updateContent, 1000);
+
+    </script>
+
+    <footer>
+        <div id="footnotes"><b onclick="resetTimer()">Footnotes</b><br>
+            Mastercard® is a registered trademark, and the circles design is a trademark of Mastercard International
+            Incorporated.The
+            EMVCo Contactless Symbol and Contactless Indicator mark, consisting of four graduating arcs, are trademarks
+            owned by and used with permission of EMVCo,
+            LLC.This product finder tool is informational and educational only and strictly meant to provide an overview
+            of Capital One product offerings based on self-selected user goals. Its results do not constitute financial
+            or investment advice.
+            CreditWise availability will vary depending on ability to obtain your credit history from TransUnion®.
+            Major League Baseball trademarks and copyrights are used with permission of Major League Baseball. Visit
+            MLB.com.
+        </div>
+    </footer>
+
 </body>
+
 </html>
