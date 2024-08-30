@@ -459,18 +459,11 @@
             }
 
             #mainGraphic {
-                width: 100%;
-                /* Make the image fill the width of its container */
-                height: auto;
-                /* Keep aspect ratio */
-                max-width: 100%;
-                /* Ensure it does not exceed the container width */
-                margin-bottom: 20px;
-                /* Adjust spacing as needed */
-                object-fit: contain;
-                /* Ensure the image scales properly */
-            }
-
+        width: 80%; /* Adjust width to be less than 100% to allow padding */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image */
+        max-width: 100%; /* Ensure it doesn't exceed the container width */
+    }
             #instructionsGraphic {
                 height: auto;
                 max-width: 100%;
