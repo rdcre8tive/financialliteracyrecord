@@ -377,88 +377,92 @@
 
         @media (max-width: 768px) {
 
-
-
 #quote {
-width: 100%;
-font-style: italic;
-font-size:1em;
-margin-top: -2em;
-
+    width: 100%;
+    font-style: italic;
+    font-size: 1em;
+    margin-top: -2em;
 }
 
 #countdown {
-font-size: 3em;
-margin-top: 10px;
-color: #013D5B;
+    font-size: 3em;
+    margin-top: 10px;
+    color: #013D5B;
 }
-/* Adjust breakpoint as needed */
+
+/* Ensure landing content appears at the top */
 .container {
-    padding: 20px;
-    padding-bottom: 80px;
+    padding: 10px; /* Reduce padding to minimize blank space */
+    padding-bottom: 40px; /* Adjust as needed */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+.centered-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0; /* Remove padding */
+}
+
+/* Additional adjustments for the landing content */
+#landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    padding-top: 0; /* Ensure no extra space at the top */
 }
 
 .white-box {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0; /* Remove extra margin */
 }
 
 .nav-bar {
     position: sticky;
     top: 0;
     left: 0;
-    width: 100vw;
-    /* Ensure it covers the full width of the viewport */
+    width: 100%; /* Full width to cover the entire viewport */
     z-index: 1000;
-    height: 100px;
-    /* Set the height to 100px */
-    padding: 10px 0;
-    /* Remove side padding to utilize full width */
-    margin: 0;
-    /* Remove any margin */
+    height: auto; /* Let height adjust based on content */
+    padding: 10px 0; /* Minimal padding */
+    margin: 0; /* Remove any margin */
+    padding-top: 10px; /* Add padding to prevent it from being cut off */
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
     display: flex;
-    flex-direction: row;
-    /* Arrange items horizontally */
-    justify-content: space-between;
-    /* Distribute space evenly */
-    align-items: center;
-    /* Center items vertically */
-    overflow-x: auto;
-    /* Allow horizontal scrolling if needed */
-    box-sizing: border-box;
-    /* Include padding in the width calculation */
+    flex-direction: row; /* Arrange items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto a new line if needed */
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    overflow: hidden; /* Prevent horizontal overflow */
 }
 
 .nav-bar .button {
-    padding: 5px 8px;
-    /* Reduced padding */
-    font-size: 12px;
-    /* Reduced font size */
-    flex-shrink: 0;
-    /* Prevent buttons from shrinking */
-    white-space: nowrap;
-    /* Prevent text wrapping */
+    padding: 5px 8px; /* Reduced padding */
+    font-size: 12px; /* Reduced font size */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    white-space: nowrap; /* Prevent text wrapping */
+    flex: 1 1 auto; /* Allow buttons to grow and shrink as needed */
+    text-align: center; /* Center button text */
 }
 
 .timer {
-    font-size: 18px;
-    /* Reduced timer size */
-    order: 1;
-    /* Position timer first */
+    font-size: 18px; /* Reduced timer size */
+    order: 1; /* Position timer first */
+    flex: 1 1 100%; /* Allow timer to take full width on its own line */
+    text-align: center; /* Center timer */
 }
 
 .timer-done {
     display: flex;
-    flex-direction: column;
-    /* Stack survey button and image vertically */
-    align-items: center;
-    /* Center items */
-    order: 2;
-    /* Position underneath the timer */
-    width: 100%;
-    /* Full width to ensure proper alignment */
+    flex-direction: column; /* Stack survey button and image vertically */
+    align-items: center; /* Center items */
+    order: 2; /* Position underneath the timer */
+    width: 100%; /* Full width to ensure proper alignment */
 }
 
 h1 {
@@ -478,44 +482,38 @@ h2 {
 }
 
 #mainGraphic {
-width: 100%; /* Adjust width to be less than 100% to allow padding */
-height: auto; /* Maintain aspect ratio */
-margin: 0 auto; /* Center the image */
-padding: 0 0 1em 0;
-max-width: 100%; /* Ensure it doesn't exceed the container width */
+    width: 100%; /* Adjust width to be less than 100% to allow padding */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    padding: 0 0 1em 0;
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
 }
+
 #instructionsGraphic {
     height: auto;
     max-width: 100%;
 }
 
 .button {
-    padding: 8px 15px;
-    /* Reduce padding */
-    font-size: 12px;
-    /* Reduce font size */
+    padding: 8px 15px; /* Reduce padding */
+    font-size: 12px; /* Reduce font size */
 }
 
 .startButton {
-    padding: 10px 20px !important;
-    /* Adjust start button padding */
-    font-size: 12px;
-    /* Adjust font size */
+    padding: 10px 20px !important; /* Adjust start button padding */
+    font-size: 12px; /* Adjust font size */
 }
 
 #surveyImage {
-    height: 60px;
-    /* Reduce the height to ensure it's fully visible */
-    max-width: 80px;
-    /* Set max-width to ensure the aspect ratio is maintained */
-    object-fit: contain;
-    /* Ensure the image scales properly */
-    margin: 0 auto;
-    /* Center the image if necessary */
-    display: block;
-    /* Ensure block display to avoid cutoff */
+    height: 60px; /* Reduce the height to ensure it's fully visible */
+    max-width: 80px; /* Set max-width to ensure the aspect ratio is maintained */
+    object-fit: contain; /* Ensure the image scales properly */
+    margin: 0 auto; /* Center the image if necessary */
+    display: block; /* Ensure block display to avoid cutoff */
 }
 }
+
+
     </style>
 </head>
 
@@ -1002,7 +1000,7 @@ max-width: 100%; /* Ensure it doesn't exceed the container width */
         }
 
 
-        const startDate = new Date('2024-09-23T13:00:00'); // Set your desired start date and time here
+        const startDate = new Date('2024-08-23T13:00:00'); // Set your desired start date and time here
         const endDate = new Date('2024-09-24T13:00:00');   // Make sure endDate is AFTER startDate
 
         let showPreEventContent = false; // Set to true to force pre-event content
