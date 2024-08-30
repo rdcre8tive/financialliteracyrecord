@@ -221,7 +221,6 @@
             color: #005a8c;
             font-size: 1em;
             font-weight: 600;
-            text-align: center;
         }
 
         #event-title span {
@@ -319,7 +318,7 @@
 
         #countdown {
             font-family: 'Roboto Mono', Courier, monospace;
-            font-size: 3.5em;
+            font-size: 5em;
             margin-top: 20px;
             color: #013D5B;
         }
@@ -368,19 +367,10 @@
         #quote {
             width: 70%;
             font-style: italic;
-            font-size:1em;
+            font-size: 1em;
             margin-top: -2em;
 
         }
-
-        #time-date {
-            font-size: .9em;
-        }
-
-
-
-
-
 
 
 
@@ -388,143 +378,143 @@
 
 
 
-            #quote {
-            width: 100%;
-            font-style: italic;
-            font-size:1em;
-            margin-top: -2em;
+#quote {
+width: 100%;
+font-style: italic;
+font-size:1em;
+margin-top: -2em;
 
-        }
+}
 
-            #countdown {
-            font-size: 3em;
-            margin-top: 10px;
-            color: #013D5B;
-        }
-            /* Adjust breakpoint as needed */
-            .container {
-                padding: 20px;
-                padding-bottom: 80px;
-            }
+#countdown {
+font-size: 3em;
+margin-top: 10px;
+color: #013D5B;
+}
+/* Adjust breakpoint as needed */
+.container {
+    padding: 20px;
+    padding-bottom: 80px;
+}
 
-            .white-box {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
+.white-box {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
-            .nav-bar {
-                position: sticky;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                /* Ensure it covers the full width of the viewport */
-                z-index: 1000;
-                height: 100px;
-                /* Set the height to 100px */
-                padding: 10px 0;
-                /* Remove side padding to utilize full width */
-                margin: 0;
-                /* Remove any margin */
-                background-color: rgba(255, 255, 255, 0.9);
-                backdrop-filter: blur(5px);
-                display: flex;
-                flex-direction: row;
-                /* Arrange items horizontally */
-                justify-content: space-between;
-                /* Distribute space evenly */
-                align-items: center;
-                /* Center items vertically */
-                overflow-x: auto;
-                /* Allow horizontal scrolling if needed */
-                box-sizing: border-box;
-                /* Include padding in the width calculation */
-            }
+.nav-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Ensure it covers the full width of the viewport */
+    z-index: 1000;
+    height: 100px;
+    /* Set the height to 100px */
+    padding: 10px 0;
+    /* Remove side padding to utilize full width */
+    margin: 0;
+    /* Remove any margin */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    /* Arrange items horizontally */
+    justify-content: space-between;
+    /* Distribute space evenly */
+    align-items: center;
+    /* Center items vertically */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if needed */
+    box-sizing: border-box;
+    /* Include padding in the width calculation */
+}
 
-            .nav-bar .button {
-                padding: 5px 8px;
-                /* Reduced padding */
-                font-size: 12px;
-                /* Reduced font size */
-                flex-shrink: 0;
-                /* Prevent buttons from shrinking */
-                white-space: nowrap;
-                /* Prevent text wrapping */
-            }
+.nav-bar .button {
+    padding: 5px 8px;
+    /* Reduced padding */
+    font-size: 12px;
+    /* Reduced font size */
+    flex-shrink: 0;
+    /* Prevent buttons from shrinking */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+}
 
-            .timer {
-                font-size: 18px;
-                /* Reduced timer size */
-                order: 1;
-                /* Position timer first */
-            }
+.timer {
+    font-size: 18px;
+    /* Reduced timer size */
+    order: 1;
+    /* Position timer first */
+}
 
-            .timer-done {
-                display: flex;
-                flex-direction: column;
-                /* Stack survey button and image vertically */
-                align-items: center;
-                /* Center items */
-                order: 2;
-                /* Position underneath the timer */
-                width: 100%;
-                /* Full width to ensure proper alignment */
-            }
+.timer-done {
+    display: flex;
+    flex-direction: column;
+    /* Stack survey button and image vertically */
+    align-items: center;
+    /* Center items */
+    order: 2;
+    /* Position underneath the timer */
+    width: 100%;
+    /* Full width to ensure proper alignment */
+}
 
-            h1 {
-                font-size: 30px;
-            }
+h1 {
+    font-size: 30px;
+}
 
-            h2 {
-                font-size: 24px;
-            }
+h2 {
+    font-size: 24px;
+}
 
-            .sticky-image {
-                width: 15%;
-            }
+.sticky-image {
+    width: 15%;
+}
 
-            .sticky-image-right {
-                width: 3%;
-            }
+.sticky-image-right {
+    width: 3%;
+}
 
-            #mainGraphic {
-        width: 100%; /* Adjust width to be less than 100% to allow padding */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto; /* Center the image */
-        padding: 0 0 1em 0;
-        max-width: 100%; /* Ensure it doesn't exceed the container width */
-    }
-            #instructionsGraphic {
-                height: auto;
-                max-width: 100%;
-            }
+#mainGraphic {
+width: 100%; /* Adjust width to be less than 100% to allow padding */
+height: auto; /* Maintain aspect ratio */
+margin: 0 auto; /* Center the image */
+padding: 0 0 1em 0;
+max-width: 100%; /* Ensure it doesn't exceed the container width */
+}
+#instructionsGraphic {
+    height: auto;
+    max-width: 100%;
+}
 
-            .button {
-                padding: 8px 15px;
-                /* Reduce padding */
-                font-size: 12px;
-                /* Reduce font size */
-            }
+.button {
+    padding: 8px 15px;
+    /* Reduce padding */
+    font-size: 12px;
+    /* Reduce font size */
+}
 
-            .startButton {
-                padding: 10px 20px !important;
-                /* Adjust start button padding */
-                font-size: 12px;
-                /* Adjust font size */
-            }
+.startButton {
+    padding: 10px 20px !important;
+    /* Adjust start button padding */
+    font-size: 12px;
+    /* Adjust font size */
+}
 
-            #surveyImage {
-                height: 60px;
-                /* Reduce the height to ensure it's fully visible */
-                max-width: 80px;
-                /* Set max-width to ensure the aspect ratio is maintained */
-                object-fit: contain;
-                /* Ensure the image scales properly */
-                margin: 0 auto;
-                /* Center the image if necessary */
-                display: block;
-                /* Ensure block display to avoid cutoff */
-            }
-        }
+#surveyImage {
+    height: 60px;
+    /* Reduce the height to ensure it's fully visible */
+    max-width: 80px;
+    /* Set max-width to ensure the aspect ratio is maintained */
+    object-fit: contain;
+    /* Ensure the image scales properly */
+    margin: 0 auto;
+    /* Center the image if necessary */
+    display: block;
+    /* Ensure block display to avoid cutoff */
+}
+}
     </style>
 </head>
 
@@ -547,20 +537,23 @@
 
                 <div id="preContainer" class="date-based-content">
                     <div>
-                        
-                        <h3 class="centered-content" id="quote">“Financial literacy is a key building block to achieving financial well-being. I’ve
-                            personally witnessed the power of Khan Academy’s mastery learning model to help make complex
-                            subjects easily understood. To draw attention to this important resource, I hope you will
-                            join Capital One and Khan Academy in setting a new Guinness World Record, and encourage your
-                            family and friends to start their financial literacy journey by attempting this challenge.”
-                        <br><br><b>Sanjiv Yajnik,</b> President of Financial Services at Capital One</h3></p>
-                        <h2 id="time-date">1 PM CT Monday, Sept. 23 – 1PM CT Tuesday, Sept. 24</h2>
+
+                        <h3 class="centered-content" id="quote">“Financial literacy is a key building block to achieving
+                            financial well-being. I’ve personally witnessed the power of Khan Academy’s mastery learning
+                            model to help make complex subjects easily understood. To draw attention to this important
+                            resource, I hope you will join Capital One and Khan Academy in setting a new world record,
+                            and encourage your family and friends to start their financial literacy journey by taking
+                            part in this challenge.” <b>— Sanjiv Yajnik, President of Financial Services at
+                            Capital One</b></h3>
+                        </h3>
+                        </p>
+                        <h2>1 PM CT Monday, Sept. 23 – 1PM CT Tuesday, Sept. 24</h2>
                     </div>
-                    <add-to-calendar-button name="Capital One and Khan Academy presents: Let’s go Set a Record"
+                    <add-to-calendar-button name="Reminder: Participate in World Record Challenge"
                         options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
                         startDate="2024-09-23" endDate="2024-09-24" startTime="13:00" endTime="13:00"
                         timeZone="America/Chicago"
-                        description="Join us for an exciting event where we aim to set a record together! Stay tuned for more details about the event.">
+                        description="Over the next 24 hours, take 30 minutes to participate in Capital One and Khan Academy’s  Guinness World Record attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you’ll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://bit.ly/gwr-khan-general ">
 
                         <button id="add-to-calendar">Add to Calendar</button>
                         <button id="startButton" class="button" onclick="showPreInstructions()">GET STARTED</button>
@@ -609,7 +602,8 @@
 
 
             <h2>Setting a GUINNESS WORLD RECORD® with Financial Literacy</h2>
-            <p>Join Capital One as we attempt to set a world record utilizing Khan Academy's financial literacy resources!
+            <p>Join Capital One as we attempt to set a world record utilizing Khan Academy's financial literacy
+                resources!
                 The following financial literacy world delves into effective budgeting and savings strategies, provides
                 advice on buying a car, and explores smart ways to pay for college. By taking this challenge, you will
                 start on your financial journey to learn valuable skills to make informed decisions, while also playing
@@ -794,28 +788,20 @@
             <div class="centered-content">
                 <div id="completionCode"></div>
             </div>
+            <iframe id="surveyFrame" src="https://survey.alchemer.com/s3/7940387/Khan-GWR"></iframe>
+
             <br>
 
 
-            <script
-                type="text/javascript">document.write('<script src="http' + (("https:" == document.location.protocol) ? "s" : "") + '://survey.alchemer.com/s3/7940387/Khan-GWR?__output=embedjs&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
-            <noscript>Alchemer - The best <a href="https://www.alchemer.com/">survey platform</a> for individuals. <a
-                    href="https://survey.alchemer.com/s3/7940387/Khan-GWR??jsfallback=true">Please take my survey
-                    now</a></noscript>
-            <style>
-                .sg-survey {
-                    display: none;
-                }
-            </style>
         </div>
 
-        <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">
+        <!-- <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">  -->
     </div>
 
     <script>
         let timer;
         let seconds = 0;
-        const totalTime = 10; // set to 30 minutes
+        const totalTime = 5; // set to 30 minutes
         let currentModule = 1;
         let timerDone = false;
         let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
@@ -1088,7 +1074,7 @@
 
     </script>
 
-    <footer>
+   <!-- <footer>
         <div id="footnotes"><b onclick="resetTimer()">Footnotes</b><br>
             Mastercard® is a registered trademark, and the circles design is a trademark of Mastercard International
             Incorporated.The
@@ -1101,7 +1087,7 @@
             Major League Baseball trademarks and copyrights are used with permission of Major League Baseball. Visit
             MLB.com.
         </div>
-    </footer>
+    </footer> -->
 
 </body>
 
