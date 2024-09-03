@@ -195,7 +195,7 @@
             height: auto;
             /* Initial height: let the content determine it */
             border: none;
-            min-height: 300px;
+            min-height: 2500px;
             /* Optional: set a minimum height to prevent it from shrinking too much */
         }
 
@@ -214,7 +214,7 @@
         h3 {
             color: #005a8c;
             font-size: 18px;
-            font-weight: 200;
+            font-weight: 300;
         }
 
         #event-title {
@@ -377,143 +377,186 @@
 
         @media (max-width: 768px) {
 
-#quote {
-    width: 100%;
-    font-style: italic;
-    font-size: 1em;
-    margin-top: -2em;
-}
+            #quote {
+                width: 100%;
+                font-style: italic;
+                font-size: 1em;
+                margin-top: -2em;
+            }
 
-#countdown {
-    font-size: 3em;
-    margin-top: 10px;
-    color: #013D5B;
-}
+            #countdown {
+                font-size: 3em;
+                margin-top: 10px;
+                color: #013D5B;
+            }
 
-/* Ensure landing content appears at the top */
-.container {
-    padding: 10px; /* Reduce padding to minimize blank space */
-    padding-bottom: 40px; /* Adjust as needed */
-    justify-content: flex-start; /* Align content to the top */
-}
+            /* Ensure landing content appears at the top */
+            .container {
+                padding: 10px;
+                /* Reduce padding to minimize blank space */
+                padding-bottom: 40px;
+                /* Adjust as needed */
+                justify-content: flex-start;
+                /* Align content to the top */
+            }
 
-.centered-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0; /* Remove padding */
-}
+            .centered-content {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+                padding: 0;
+                /* Remove padding */
+            }
 
-/* Additional adjustments for the landing content */
-#landing {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
-    padding-top: 0; /* Ensure no extra space at the top */
-}
+            /* Additional adjustments for the landing content */
+            #landing {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                /* Align content to the top */
+                padding-top: 0;
+                /* Ensure no extra space at the top */
+            }
 
-.white-box {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 0; /* Remove extra margin */
-}
+            .white-box {
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 0;
+                /* Remove extra margin */
+            }
 
-.nav-bar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%; /* Full width to cover the entire viewport */
-    z-index: 1000;
-    height: auto; /* Let height adjust based on content */
-    padding: 10px 0; /* Minimal padding */
-    margin: 0; /* Remove any margin */
-    padding-top: 10px; /* Add padding to prevent it from being cut off */
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
-    display: flex;
-    flex-direction: row; /* Arrange items horizontally */
-    flex-wrap: wrap; /* Allow items to wrap onto a new line if needed */
-    justify-content: space-between; /* Distribute space evenly */
-    align-items: center; /* Center items vertically */
-    box-sizing: border-box; /* Include padding in the width calculation */
-    overflow: hidden; /* Prevent horizontal overflow */
-}
+            .nav-bar {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 100%;
+                /* Full width to cover the entire viewport */
+                z-index: 1000;
+                height: auto;
+                /* Let height adjust based on content */
+                padding: 10px 0;
+                /* Minimal padding */
+                margin: 0;
+                /* Remove any margin */
+                padding-top: 10px;
+                /* Add padding to prevent it from being cut off */
+                background-color: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(5px);
+                display: flex;
+                flex-direction: row;
+                /* Arrange items horizontally */
+                flex-wrap: wrap;
+                /* Allow items to wrap onto a new line if needed */
+                justify-content: space-between;
+                /* Distribute space evenly */
+                align-items: center;
+                /* Center items vertically */
+                box-sizing: border-box;
+                /* Include padding in the width calculation */
+                overflow: hidden;
+                /* Prevent horizontal overflow */
+            }
 
-.nav-bar .button {
-    padding: 5px 8px; /* Reduced padding */
-    font-size: 12px; /* Reduced font size */
-    flex-shrink: 0; /* Prevent buttons from shrinking */
-    white-space: nowrap; /* Prevent text wrapping */
-    flex: 1 1 auto; /* Allow buttons to grow and shrink as needed */
-    text-align: center; /* Center button text */
-}
+            .nav-bar .button {
+                padding: 5px 8px;
+                /* Reduced padding */
+                font-size: 12px;
+                /* Reduced font size */
+                flex-shrink: 0;
+                /* Prevent buttons from shrinking */
+                white-space: nowrap;
+                /* Prevent text wrapping */
+                flex: 1 1 auto;
+                /* Allow buttons to grow and shrink as needed */
+                text-align: center;
+                /* Center button text */
+            }
 
-.timer {
-    font-size: 18px; /* Reduced timer size */
-    order: 1; /* Position timer first */
-    flex: 1 1 100%; /* Allow timer to take full width on its own line */
-    text-align: center; /* Center timer */
-}
+            .timer {
+                font-size: 18px;
+                /* Reduced timer size */
+                order: 1;
+                /* Position timer first */
+                flex: 1 1 100%;
+                /* Allow timer to take full width on its own line */
+                text-align: center;
+                /* Center timer */
+            }
 
-.timer-done {
-    display: flex;
-    flex-direction: column; /* Stack survey button and image vertically */
-    align-items: center; /* Center items */
-    order: 2; /* Position underneath the timer */
-    width: 100%; /* Full width to ensure proper alignment */
-}
+            .timer-done {
+                display: flex;
+                flex-direction: column;
+                /* Stack survey button and image vertically */
+                align-items: center;
+                /* Center items */
+                order: 2;
+                /* Position underneath the timer */
+                width: 100%;
+                /* Full width to ensure proper alignment */
+            }
 
-h1 {
-    font-size: 30px;
-}
+            h1 {
+                font-size: 30px;
+            }
 
-h2 {
-    font-size: 24px;
-}
+            h2 {
+                font-size: 24px;
+            }
 
-.sticky-image {
-    width: 15%;
-}
+            .sticky-image {
+                width: 15%;
+            }
 
-.sticky-image-right {
-    width: 3%;
-}
+            .sticky-image-right {
+                width: 3%;
+            }
 
-#mainGraphic {
-    width: 100%; /* Adjust width to be less than 100% to allow padding */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image */
-    padding: 0 0 1em 0;
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
-}
+            #mainGraphic {
+                width: 100%;
+                /* Adjust width to be less than 100% to allow padding */
+                height: auto;
+                /* Maintain aspect ratio */
+                margin: 0 auto;
+                /* Center the image */
+                padding: 0 0 1em 0;
+                max-width: 100%;
+                /* Ensure it doesn't exceed the container width */
+            }
 
-#instructionsGraphic {
-    height: auto;
-    max-width: 100%;
-}
+            #instructionsGraphic {
+                height: auto;
+                max-width: 100%;
+            }
 
-.button {
-    padding: 8px 15px; /* Reduce padding */
-    font-size: 12px; /* Reduce font size */
-}
+            .button {
+                padding: 8px 15px;
+                /* Reduce padding */
+                font-size: 12px;
+                /* Reduce font size */
+            }
 
-.startButton {
-    padding: 10px 20px !important; /* Adjust start button padding */
-    font-size: 12px; /* Adjust font size */
-}
+            .startButton {
+                padding: 10px 20px !important;
+                /* Adjust start button padding */
+                font-size: 12px;
+                /* Adjust font size */
+            }
 
-#surveyImage {
-    height: 60px; /* Reduce the height to ensure it's fully visible */
-    max-width: 80px; /* Set max-width to ensure the aspect ratio is maintained */
-    object-fit: contain; /* Ensure the image scales properly */
-    margin: 0 auto; /* Center the image if necessary */
-    display: block; /* Ensure block display to avoid cutoff */
-}
-}
-
-
+            #surveyImage {
+                height: 60px;
+                /* Reduce the height to ensure it's fully visible */
+                max-width: 80px;
+                /* Set max-width to ensure the aspect ratio is maintained */
+                object-fit: contain;
+                /* Ensure the image scales properly */
+                margin: 0 auto;
+                /* Center the image if necessary */
+                display: block;
+                /* Ensure block display to avoid cutoff */
+            }
+        }
     </style>
 </head>
 
@@ -524,7 +567,7 @@ h2 {
     <div class="animated-background" id="animatedBackground"></div>
     <div class="header">
         <div class="main-title" onclick="location.reload()" style="color:#d8cbba; cursor: pointer;">
-            <p id="event-title">Most users to complete an online financial literacy lesson in 24 hours<span></span></p>
+            <p id="event-title">Most users to take an online financial literacy lesson in 24 hours<span></span></p>
         </div>
     </div>
 
@@ -543,10 +586,10 @@ h2 {
                             resource, I hope you will join Capital One and Khan Academy in setting a new world record,
                             and encourage your family and friends to start their financial literacy journey by taking
                             part in this challenge.” <b>— Sanjiv Yajnik, President of Financial Services at
-                            Capital One</b></h3>
+                                Capital One</b></h3>
                         </h3>
                         </p>
-                        <h2>1 PM CT Monday, Sept. 23 – 1PM CT Tuesday, Sept. 24</h2>
+                        <h2>1 PM CT Monday, Sept. 23 – 1 PM CT Tuesday, Sept. 24</h2>
                     </div>
                     <add-to-calendar-button name="Reminder: Participate in World Record Challenge"
                         options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
@@ -572,8 +615,8 @@ h2 {
                 </div>
 
                 <div id="postContainer" class="date-based-content">
-         
-                    
+                    <h2>Post-Event Content</h2>
+                    <p>This content is shown after 8/12/24 8:30 PM.</p>
                     <button class="dev-button" onclick="showContainer('preContainer')"></button>
                 </div>
 
@@ -592,25 +635,26 @@ h2 {
 
         <div id="pre-instructions" class="white-box">
             <h2>Our Partnership with Khan Academy</h2>
-            <p>Capital One is supporting Khan Academy to deliver Financial Literacy lessons that breaks down
-                complex financial concepts into a series of self-paced units. At Capital One, we believe that people
-                deserve to feel confident, capable and in control when it comes to their money — and we know that
-                financial literacy is one key to helping people achieve financial well-being. By utilizing
-                Khan Academy, a trusted leader in online learning, we are helping provide access to free, quality
-                financial education so that all Americans can get one step closer to financial well-being.</p>
+            <p>Capital One is supporting Khan Academy’s free Financial Literacy course which breaks down complex
+                financial concepts into a series of self-paced units. At Capital One, we believe that people deserve to
+                feel confident, capable and in control when it comes to their money—and we know that financial literacy
+                is one key to helping people achieve financial well-being. By supporting Khan Academy, a trusted leader
+                in online learning, we are helping provide access to free, quality financial education so that all
+                Americans can get one step closer to financial well-being.</p>
 
 
             <h2>Setting a GUINNESS WORLD RECORD® with Financial Literacy</h2>
             <p>Join Capital One as we attempt to set a world record utilizing Khan Academy's financial literacy
-                resources!
-                The following financial literacy world delves into effective budgeting and savings strategies, provides
-                advice on buying a car, and explores smart ways to pay for college. By taking this challenge, you will
-                start on your financial journey to learn valuable skills to make informed decisions, while also playing
-                a part in setting a Guinness World Record. </p>
-
-            <p>Hear below from Sal Khan why Financial Literacy is important and click the 'Begin challenge' button to
-                take
-                a step toward securing your financial future!</p>
+                resources! The modules you will explore today include: </p>
+            <ul>
+                <li>Budgeting and Savings</li>
+                <li>Buying a Car</li>
+                <li>Paying for College</li>
+            </ul>
+            <p>By participating in this challenge, you will start on your financial literacy journey, while also being
+                part of setting a Guinness World Record.<br>
+                Hear below from Sal Khan why financial literacy is important and click the 'Begin challenge' button to
+                start your financial well-being journey</p>
 
             <div class="centered-content"><iframe width="560" height="315"
                     src="https://www.youtube.com/embed/Lys4EVugJmk?si=kPBKovYnSsJwHn7S" title="YouTube video player"
@@ -671,9 +715,8 @@ h2 {
                     <br><img src="coins-animation.gif" alt="Coins Animation"
                         style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 280px;">
                     <h1>Budgeting & Savings</h1>
-                    <h2>What is a Budget?</h2>
-                    <p>A budget is a plan that helps you manage your money. It
-                        shows you how much money you have, how
+                    <h2>What Is a Budget?</h2>
+                    <p>A budget is a plan that helps you manage your money. It shows you how much money you have, how
                         much money you need to spend on different things, and how much money you can save or use for
                         other goals. A budget can help you make smart decisions with your money and avoid problems like
                         overspending, debt, or running out of money.</p>
@@ -689,7 +732,10 @@ h2 {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-
+                    <img src="yellow.svg" alt="spark"
+                        style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
+                    <h3>Now you know what the 50:30:20 rule is, here’s how you can use it to help build your budget.
+                    </h3>
                     <br>
 
                     <div class="centered-content"><iframe width="560" height="315"
@@ -708,16 +754,14 @@ h2 {
                     <p>Another reason it's important to save money is so you can reach your goals. If you want to buy a
                         car or a house, save for college, or travel to a new place, it often takes time to save up
                         enough money to do those things. By saving regularly, you're taking steps towards achieving
-                        those goals.
-                    </p><br>
+                        those goals.</p><br>
                     <div class="centered-content"><iframe width="560" height="315"
                             src="https://www.youtube.com/embed/cnW_HDIBmz4?si=fXrKrR3zGnJRJBjP"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><i>Continue your financial literacy journey with<a
-                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
-                                    Academy.</i></a></p>
+                        <p><i>Continue your financial literacy journey with Khan
+                                Academy.</i></p>
                     </div>
                 </div>
 
@@ -725,26 +769,35 @@ h2 {
                     <br><img src="car-buying.svg" alt="Car Buying"
                         style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
                     <h1>Buying a Car</h1>
-                    <p>Buying a car can sometimes feel overwhelming and stressful -- from the pushy sales talk, to
-                        making quick decisions that may not always be in your best interest. But that's about to change
-                        with this unit. You'll learn how to prepare for buying a car, arm yourself with knowledge, and
-                        most importantly, make decisions that are right for you.</p><br>
+                    <p>Buying a car can sometimes feel overwhelming and stressful - from the sales talk, to making quick
+                        decisions that may not always be in your best interest. But that's about to change with this
+                        unit. You'll learn how to:</p>
+                    <ul>
+                        <li>Prepare for buying a car</li>
+                        <li>Arm yourself with knowledge</li>
+                        <li>Learn how to make decisions that are right for you</li>
+                    </ul>
                     <div class="centered-content"><iframe width="560" height="315"
                             src="https://www.youtube.com/embed/p0mQOJvbT78?si=gVm5WKOR2QSjsc4U"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
+                    <img src="yellow.svg" alt="spark"
+                        style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
+                    <h3>Now that you have a better idea about the car buying process, let’s learn how to calculate a car
+                        payment.
+                    </h3>
                     <br>
+
                     <div class="centered-content">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/5BT8HlppkCU?si=N0Ybv9oLQKfAgVNW"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><i>Continue your financial literacy journey with<a
-                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
-                                    Academy.</i></a></p>
+                        <p><i>Continue your financial literacy journey with Khan
+                                Academy.</i></p>
 
                     </div>
                 </div>
@@ -754,16 +807,17 @@ h2 {
                         style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
                     <h1>Paying for College</h1>
                     <p>Investing in your career and education is an important way to help yourself succeed and reach
-                        your
-                        goals in life. By learning new skills and gaining knowledge, you can open up opportunities for
-                        better jobs
-                        and a brighter future.</p><br>
+                        your goals in life. By learning new skills and gaining knowledge, you can open up opportunities
+                        for better jobs and a brighter future.</p><br>
                     <div class="centered-content"><iframe width="560" height="315"
                             src="https://www.youtube.com/embed/SAjZj3ZwebA?si=3xEBdGfuuaxeT9JC"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="referrerpolicy=" strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
+                    <img src="yellow.svg" alt="spark"
+                        style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
+                    <h3>College is a big investment, let’s take a look at what factors into how much it costs. </h3>
                     <br>
                     <div class="centered-content">
                         <iframe width="560" height="315"
@@ -771,9 +825,8 @@ h2 {
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        <p><i>Continue your financial literacy journey with<a
-                                    href="https://www.capitalone.com/about/khan-academy/" target="_blank"> Khan
-                                    Academy.</i></a></p>
+                        <p><i>Continue your financial literacy journey with Khan
+                                Academy.</i></p>
 
 
 
@@ -787,14 +840,14 @@ h2 {
             <div class="centered-content">
                 <div id="completionCode"></div>
             </div>
-            <iframe id="surveyFrame" src="https://survey.alchemer.com/s3/7940387/Khan-GWR"></iframe>
+            <iframe id="surveyFrame" scrolling="yes" src="https://survey.alchemer.com/s3/7940387/Khan-GWR"></iframe>
 
             <br>
 
 
         </div>
 
-        <!-- <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">  -->
+        <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">
     </div>
 
     <script>
@@ -805,20 +858,12 @@ h2 {
         let timerDone = false;
         let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
 
-     
 
 
 
 
-        
-        function checkEventDate() {
-            const eventEndDate = new Date('2024-09-24T13:00:00'); // Set the event end date here
-            const currentDate = new Date();
 
-            if (currentDate > eventEndDate) {
-                document.body.innerHTML = '<div class="container"><div class="white-box"><h1>This event has ended</h1><p>Thank you for your interest in participating in our effort to set a record for most users to take an online financial literacy lesson in 24 hours. The window to participate has passed and the record has been achieved!</p><p>If you are interested in taking the next step in your financial literacy journey, <a href="https://www.capitalone.com/learn-grow/money-management/khan-academy-financial-literacy-course/">dive into the Khan Academy challenge here and learn more.</a></p></div></div>';
-            }
-        }
+
 
         window.onload = function () {
             checkEventDate();
@@ -990,8 +1035,20 @@ h2 {
         }
 
 
-        const startDate = new Date('2024-10-23T13:00:00'); // Set your desired start date and time here
+        const startDate = new Date('2024-09-23T13:00:00'); // Set your desired start date and time here
         const endDate = new Date('2024-09-24T13:00:00');   // Make sure endDate is AFTER startDate
+
+
+        function checkEventDate() {
+            const eventEndDate = new Date('2024-09-24T13:00:00'); // Set the event end date here
+            const currentDate = new Date();
+
+            if (currentDate > eventEndDate) {
+                document.body.innerHTML = '<div class="container"><div class="white-box"><h1>This event has ended</h1><p>Thank you for your interest in participating in our effort to set a record for most users to take an online financial literacy lesson in 24 hours. The window to participate has passed and the record has been achieved!</p><p>If you are interested in taking the next step in your financial literacy journey, <a href="https://www.capitalone.com/learn-grow/money-management/khan-academy-financial-literacy-course/">dive into the Khan Academy challenge here and learn more.</a></p></div></div>';
+            }
+        }
+
+
 
         let showPreEventContent = false; // Set to true to force pre-event content
 
@@ -1061,22 +1118,43 @@ h2 {
         updateContent();
         setInterval(updateContent, 1000);
 
+
+
+
+
+        // Listen for messages from the iframe
+        window.addEventListener('message', function (event) {
+            // Check if the message is 'scrollToTop'
+            if (event.data === 'scrollToTop') {
+                // Smoothly scroll the parent window to the top 
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
     </script>
 
-   <!-- <footer>
-        <div id="footnotes"><b onclick="resetTimer()">Footnotes</b><br>
-            Mastercard® is a registered trademark, and the circles design is a trademark of Mastercard International
-            Incorporated.The
-            EMVCo Contactless Symbol and Contactless Indicator mark, consisting of four graduating arcs, are trademarks
-            owned by and used with permission of EMVCo,
-            LLC.This product finder tool is informational and educational only and strictly meant to provide an overview
-            of Capital One product offerings based on self-selected user goals. Its results do not constitute financial
-            or investment advice.
-            CreditWise availability will vary depending on ability to obtain your credit history from TransUnion®.
-            Major League Baseball trademarks and copyrights are used with permission of Major League Baseball. Visit
-            MLB.com.
+    <footer>
+        <div id="footnotes">
+            <b onclick="resetTimer()">Disclosures and Important Information</b><br>
+            Your participation in the Financial Literacy Lesson for the purpose of the world record attempt does not
+            constitute completion of Khan Academy coursework. Should you wish to do so, you can continue the course on
+            <a href="http://KhanAcademy.org" style="color: inherit" target="_blank"> KhanAcademy.org</a>. The content for the Financial Literacy Lesson is prepared and owned by Khan Academy, and
+            Khan Academy is a registered trademark of Khan Academy Inc.<br>
+            <br>
+            GUINNESS WORLD RECORDS® and the GUINNESS WORLD RECORDS® Logo are registered trademarks of GUINNESS WORLD
+            RECORDS® Limited.
+            <br>
+            ©2024 Capital One &nbsp;&nbsp;
+            <a style="color: inherit" href="https://www.capitalone.com/privacy/"  target="_blank"> Privacy </a>&#124;&nbsp;<a
+                style="color: inherit"
+                href="https://www.capitalone.com/privacy/online-privacy-policy/#collecting-using-sharing-information-accordion-button-5"  target="_blank">
+                AdChoices</a> &#124;&nbsp;<a style="color: inherit"
+                href="https://www.capitalone.com/digital/terms-conditions/"  target="_blank"> Terms & Conditions </a>
         </div>
-    </footer> -->
+    </footer>
 
 </body>
 
