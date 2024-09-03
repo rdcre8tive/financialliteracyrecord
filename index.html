@@ -572,8 +572,8 @@ h2 {
                 </div>
 
                 <div id="postContainer" class="date-based-content">
-                    <h2>Post-Event Content</h2>
-                    <p>This content is shown after 8/12/24 8:30 PM.</p>
+         
+                    
                     <button class="dev-button" onclick="showContainer('preContainer')"></button>
                 </div>
 
@@ -805,24 +805,14 @@ h2 {
         let timerDone = false;
         let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
 
-        function resizeIframe() {
-            const iframe = document.getElementById('surveyFrame');
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        }
+     
 
-        // Initial resize on page load
-        window.onload = function () {
-            // ... your existing onload code ...
 
-            // Resize the iframe initially
-            resizeIframe();
 
-            // Add an event listener to resize the iframe on window resize
-            window.addEventListener('resize', resizeIframe);
-        };
 
+        
         function checkEventDate() {
-            const eventEndDate = new Date('2024-08-30T23:59:59'); // Set the event end date here
+            const eventEndDate = new Date('2024-09-24T13:00:00'); // Set the event end date here
             const currentDate = new Date();
 
             if (currentDate > eventEndDate) {
@@ -1000,7 +990,7 @@ h2 {
         }
 
 
-        const startDate = new Date('2024-08-23T13:00:00'); // Set your desired start date and time here
+        const startDate = new Date('2024-10-23T13:00:00'); // Set your desired start date and time here
         const endDate = new Date('2024-09-24T13:00:00');   // Make sure endDate is AFTER startDate
 
         let showPreEventContent = false; // Set to true to force pre-event content
