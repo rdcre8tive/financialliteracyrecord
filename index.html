@@ -220,14 +220,14 @@
         }
 
         #event-title {
-            color: #005a8c;
+            color: #013D5B;
             font-size: 1em;
             font-weight: 600;
             text-align: center;
         }
 
         #event-title span {
-            color: #005a8c;
+            color: #013D5B;
             font-size: 1em;
             font-weight: 300;
         }
@@ -380,7 +380,7 @@
             font-style: italic;
             font-size: 1em;
             margin-top: -2em;
-
+            color: #013D5B;
         }
 
 
@@ -392,6 +392,7 @@
                 font-style: italic;
                 font-size: 1em;
                 margin-top: -2em;
+                color: #013D5B;
             }
 
             #countdown {
@@ -607,8 +608,7 @@
             padding: 10px 20px;
         }
 
-        @media (max-width: 768px) {
-            .overlay-content {
+        .overlay-content {
                 padding: 20px;
                 max-width: 90%;
             }
@@ -625,7 +625,57 @@
                 font-size: 16px;
                 padding: 8px 16px;
             }
+
+        #preContainer {
+            color: #013D5B;
         }
+        #preContainer {
+                color: #013D5B;
+            }
+
+        #countdown-text {
+            color: #013D5B;
+        }
+
+        #countdown-text {
+                color: #013D5B;
+            }
+
+        img[alt="Car Buying"] {
+            float: right;
+            margin: 0 0 10px 20px;
+            width: 180px;
+            height: auto;
+        }
+
+        img[alt="Car Buying"] {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                width: 140px; /* Smaller size for mobile */
+            }
+
+            #module2 h1 {
+                text-align: center;
+            }
+
+        #pre-instructions {
+            /* Existing styles */
+        }
+        #pre-instructions {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        h3 {
+            color: #005a8c;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        h3 {
+                font-size: 13px;
+            }
+ 
     </style>
 </head>
 
@@ -658,7 +708,7 @@
                                 Capital One</b></h3>
                         </h3>
                         </p>
-                        <h2>1 PM CT Monday, Sept. 23 – 1 PM CT Tuesday, Sept. 24</h2>
+                        <h2 id="countdown-text">1 PM CT Monday, Sept. 23 – 1 PM CT Tuesday, Sept. 24</h2>
                     </div>
                     <add-to-calendar-button name="Reminder: Participate in World Record Challenge"
                         options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
@@ -835,7 +885,7 @@
 
                 <div class="module" id="module2" style="display:none;">
                     <br><img src="car-buying.svg" alt="Car Buying"
-                        style="float: right; margin: 0 0 10px 10px; min-width: 100px; height: 180px;">
+                        style="float: right; margin: 0 0 10px 20px; width: 180px; height: auto;">
                     <h1>Buying a Car</h1>
                     <p>Buying a car can sometimes feel overwhelming and stressful - from the sales talk, to making quick
                         decisions that may not always be in your best interest. But that's about to change with this
@@ -1090,7 +1140,7 @@
         }
 
 
-        const startDate = new Date('2024-09-23T13:00:00'); // Set your desired start date and time here
+        const startDate = new Date('2024-09-02T13:00:00'); // Set your desired start date and time here
         const endDate = new Date('2024-09-24T13:00:00');   // Make sure endDate is AFTER startDate
 
 
@@ -1115,6 +1165,9 @@
                 updateCountdown();
             } else if (now >= startDate && now < endDate) {
                 showContainer('currentContainer');
+                if (wasHidden && !document.hidden && !timerDone) {
+                    showResumeIndicator();
+                }
             } else {
                 // Hide everything and display the default message
                 document.body.innerHTML = '<div class="container"><div class="white-box"><h1>This event has ended</h1><p>Thank you for your interest in participating in our effort to set a record for most users to take an online financial literacy lesson in 24 hours. The window to participate has passed and the record has been achieved!</p><p>If you are interested in taking the next step in your financial literacy journey, <a href="https://www.capitalone.com/learn-grow/money-management/khan-academy-financial-literacy-course/">dive into the Khan Academy course here and learn more.</a></p></div></div>';
@@ -1195,7 +1248,7 @@
         }
 
         function showResumeIndicator() {
-            document.getElementById('overlayTitle').textContent = 'Your Session Will Resume Now';
+            document.getElementById('overlayTitle').textContent = 'Your Learning Will Resume Now';
             document.getElementById('overlayMessage').textContent = '';
             document.getElementById('resumeTimerButton').style.display = 'none';
             document.getElementById('pauseOverlay').style.display = 'flex';
@@ -1210,19 +1263,34 @@
             document.getElementById('pauseOverlay').style.display = 'none';
         }
 
+        function isEventActive() {
+            const now = new Date();
+            return now >= startDate && now < endDate;
+        }
+
+        function isCurrentContainerVisible() {
+            return document.getElementById('currentContainer').style.display === 'block';
+        }
+
         // Event listeners for page visibility change
         document.addEventListener('visibilitychange', function() {
-            if (document.hidden && !timerDone) {
-                wasHidden = true;
-                pauseTimer();
-            } else if (wasHidden && !document.hidden && !timerDone) {
-                wasHidden = false;
-                showResumeIndicator();
+            if (isEventActive() && isCurrentContainerVisible()) {
+                if (document.hidden && !timerDone) {
+                    wasHidden = true;
+                    pauseTimer();
+                } else if (wasHidden && !document.hidden && !timerDone) {
+                    wasHidden = false;
+                    showResumeIndicator();
+                }
             }
         });
 
         // Event listener for the resume button in the overlay
-        document.getElementById('resumeTimerButton').addEventListener('click', showResumeIndicator);
+        document.getElementById('resumeTimerButton').addEventListener('click', function() {
+            if (isEventActive() && isCurrentContainerVisible()) {
+                showResumeIndicator();
+            }
+        });
 
     </script>
 
