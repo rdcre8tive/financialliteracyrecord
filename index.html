@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="https://www.capitalone.com/assets/enterprise/css/gravity-core/grv-core.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
     <style>
@@ -322,6 +324,14 @@
             font-size: 5em;
             margin-top: 20px;
             color: #013D5B;
+            letter-spacing: -0.02em; /* Slightly increase space between characters */
+        }
+
+        #countdown span {
+            font-weight: 200;
+            font-size: 0.5em;
+            margin-right: 0.3em; /* Increase space after each letter */
+            margin-left: 0.1em; /* Add a small space before each letter */
         }
 
         add-to-calendar-button.add-to-calendar.atcb-light {
@@ -557,6 +567,65 @@
                 /* Ensure block display to avoid cutoff */
             }
         }
+
+        /* Added styles for the pause overlay */
+        #pauseOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 90, 140, 0.95); /* Capital One blue with high opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .overlay-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            max-width: 80%;
+        }
+
+        #overlayTitle {
+            color: #005a8c;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        #overlayMessage {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #resumeTimerButton {
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .overlay-content {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            #overlayTitle {
+                font-size: 24px;
+            }
+
+            #overlayMessage {
+                font-size: 16px;
+            }
+
+            #resumeTimerButton {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 
@@ -580,12 +649,12 @@
                 <div id="preContainer" class="date-based-content">
                     <div>
 
-                        <h3 class="centered-content" id="quote">“Financial literacy is a key building block to achieving
-                            financial well-being. I’ve personally witnessed the power of Khan Academy’s mastery learning
+                        <h3 class="centered-content" id="quote">"Financial literacy is a key building block to achieving
+                            financial well-being. I've personally witnessed the power of Khan Academy's mastery learning
                             model to help make complex subjects easily understood. To draw attention to this important
                             resource, I hope you will join Capital One and Khan Academy in setting a new world record,
                             and encourage your family and friends to start their financial literacy journey by taking
-                            part in this challenge.” <b>— Sanjiv Yajnik, President of Financial Services at
+                            part in this challenge." <b>— Sanjiv Yajnik, President of Financial Services at
                                 Capital One</b></h3>
                         </h3>
                         </p>
@@ -595,7 +664,7 @@
                         options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
                         startDate="2024-09-23" endDate="2024-09-24" startTime="13:00" endTime="13:00"
                         timeZone="America/Chicago"
-                        description="Over the next 24 hours, take 30 minutes to participate in Capital One and Khan Academy’s  GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you’ll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://bit.ly/gwr-khan-general ">
+                        description="Over the next 24 hours, take 30 minutes to participate in Capital One and Khan Academy's  GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you'll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://bit.ly/gwr-khan-general ">
 
                         <button id="add-to-calendar">Add to Calendar</button>
                         <button id="startButton" class="button" onclick="showPreInstructions()">GET STARTED</button>
@@ -635,7 +704,7 @@
 
         <div id="pre-instructions" class="white-box">
             <h2>Our Partnership with Khan Academy</h2>
-            <p>Capital One is supporting Khan Academy’s free Financial Literacy course which breaks down complex
+            <p>Capital One is supporting Khan Academy's free Financial Literacy course which breaks down complex
                 financial concepts into a series of self-paced units. At Capital One, we believe that people deserve to
                 feel confident, capable and in control when it comes to their money—and we know that financial literacy
                 is one key to helping people achieve financial well-being. By supporting Khan Academy, a trusted leader
@@ -733,7 +802,7 @@
                     </div>
                     <img src="yellow.svg" alt="spark"
                         style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
-                    <h3>Now you know what the 50:30:20 rule is, here’s how you can use it to help build your budget.
+                    <h3>Now you know what the 50:30:20 rule is, here's how you can use it to help build your budget.
                     </h3>
                     <br>
 
@@ -784,7 +853,7 @@
                     </div>
                     <img src="yellow.svg" alt="spark"
                         style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
-                    <h3>Now that you have a better idea about the car buying process, let’s learn how to calculate a car
+                    <h3>Now that you have a better idea about the car buying process, let's learn how to calculate a car
                         payment.
                     </h3>
                     <br>
@@ -816,7 +885,7 @@
                     </div>
                     <img src="yellow.svg" alt="spark"
                         style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
-                    <h3>College is a big investment, let’s take a look at what factors into how much it costs. </h3>
+                    <h3>College is a big investment, let's take a look at what factors into how much it costs. </h3>
                     <br>
                     <div class="centered-content">
                         <iframe width="560" height="315"
@@ -849,13 +918,24 @@
         <img src="gwr-record-logo.svg" alt="GWR logo" class="gwr-logo">
     </div>
 
+    <!-- Add these divs for the pause overlay and resume indicator -->
+    <div id="pauseOverlay" style="display: none;">
+        <div class="overlay-content">
+            <h2 id="overlayTitle">Timer Paused</h2>
+            <p id="overlayMessage">You've navigated away from the page. Click the button below to resume.</p>
+            <button id="resumeTimerButton" class="button">Resume Timer</button>
+        </div>
+    </div>
+
     <script>
         let timer;
-        let seconds = 0;
-        const totalTime = 5; // set to 30 minutes
+        let seconds = 30 * 60; // Set to 30 minutes (1800 seconds)
+        const totalTime = 30 * 60; // 30 minutes in seconds
         let currentModule = 1;
         let timerDone = false;
         let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
+        let isPaused = false;
+        let wasHidden = false;
 
 
 
@@ -871,6 +951,8 @@
             if (savedSeconds) {
                 seconds = parseInt(savedSeconds);
                 document.getElementById('timer').textContent = formatTime(seconds);
+            } else {
+                document.getElementById('timer').textContent = formatTime(totalTime);
             }
             if (savedTimerDone === 'true') {
                 timerDone = true;
@@ -911,46 +993,25 @@
         }
         function startTimer() {
             timer = setInterval(() => {
-                seconds++;
-                document.getElementById('timer').textContent = formatTime(seconds);
-                localStorage.setItem('timerSeconds', seconds);
-                if (seconds >= totalTime) {
-                    clearInterval(timer);
-                    document.getElementById('timer').textContent = "Finished!";
-                    document.getElementById('timer').style.color = "#59A545";
-                    document.getElementById('surveyButton').style.display = 'none';
-                    showCompletionCode();
-                    timerDone = true;
-                    localStorage.setItem('timerDone', 'true');
-                    document.getElementById('resumeButton').textContent = 'Resume Modules';
-                    document.getElementById('animatedBackground').style.display = 'block';
-                    document.getElementById('surveyImage').style.display = 'block'; // Show surveyImage
-                } else {
-                    document.getElementById('surveyImage').style.display = 'none'; // Hide surveyImage if timer is running
-                    document.getElementById('surveyButton').style.display = 'block';
-                }
-            }, 1000);
-        }
-        function startTimer() {
-            timer = setInterval(() => {
-                seconds++;
-                document.getElementById('timer').textContent = formatTime(seconds);
-                localStorage.setItem('timerSeconds', seconds);
-                if (seconds >= totalTime) {
-                    clearInterval(timer);
-                    document.getElementById('timer').textContent = "Finished!";
-                    document.getElementById('timer').style.color = "#59A545";
-
-                    // Hide the surveyButton when the timer expires
-                    document.getElementById('surveyButton').style.display = 'none';
-
-                    // Show the completion code and survey image when the timer EXPIRES
-                    showCompletionCode();
-
-                    timerDone = true;
-                    localStorage.setItem('timerDone', 'true');
-                    document.getElementById('resumeButton').textContent = 'Resume Modules';
-                    document.getElementById('animatedBackground').style.display = 'block';
+                if (!isPaused) {
+                    seconds--;
+                    document.getElementById('timer').textContent = formatTime(seconds);
+                    localStorage.setItem('timerSeconds', seconds);
+                    if (seconds <= 0) {
+                        clearInterval(timer);
+                        document.getElementById('timer').textContent = "Finished!";
+                        document.getElementById('timer').style.color = "#59A545";
+                        document.getElementById('surveyButton').style.display = 'none';
+                        showCompletionCode();
+                        timerDone = true;
+                        localStorage.setItem('timerDone', 'true');
+                        document.getElementById('resumeButton').textContent = 'Resume Modules';
+                        document.getElementById('animatedBackground').style.display = 'block';
+                        document.getElementById('surveyImage').style.display = 'block';
+                    } else {
+                        document.getElementById('surveyImage').style.display = 'none';
+                        document.getElementById('surveyButton').style.display = 'block';
+                    }
                 }
             }, 1000);
         }
@@ -1008,28 +1069,23 @@
 
 
         function resetTimer() {
-            clearInterval(timer); // Stop the timer
-            seconds = 0;         // Reset seconds to 0
-            timerDone = false;   // Mark the timer as not done
+            clearInterval(timer);
+            seconds = totalTime;
+            timerDone = false;
 
-            // Reset timer display
-            document.getElementById('timer').textContent = '00:00:00';
+            document.getElementById('timer').textContent = formatTime(totalTime);
             document.getElementById('timer').style.color = '#005a8c';
 
-            // Reset completion elements
-            document.getElementById('completionCode').style.display = 'none'; // Hide completion code
-            document.getElementById('surveyImage').style.display = 'none';   // Hide survey image
-            document.getElementById('surveyButton').style.display = 'block'; // Show survey button
+            document.getElementById('completionCode').style.display = 'none';
+            document.getElementById('surveyImage').style.display = 'none';
+            document.getElementById('surveyButton').style.display = 'block';
             document.getElementById('animatedBackground').style.display = 'none';
 
-            // Clear saved data
             localStorage.removeItem('timerSeconds');
             localStorage.removeItem('timerDone');
 
-            // Go back to the initial landing page
             showPreInstructions();
 
-            // Alert the user
             alert('Timer has been reset.');
         }
 
@@ -1081,11 +1137,8 @@
             const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-
-            document.getElementById('countdown').textContent
-                =
-                `${daysLeft.toString().padStart(2, '0')}:${hoursLeft.toString().padStart(2, '0')}:${minutesLeft.toString().padStart(2, '0')}:${secondsLeft.toString().padStart(2,
-                    '0')}`;
+            document.getElementById('countdown').innerHTML = 
+                `${daysLeft.toString().padStart(2, '0')}<span>d</span>${hoursLeft.toString().padStart(2, '0')}<span>h</span>${minutesLeft.toString().padStart(2, '0')}<span>m</span>${secondsLeft.toString().padStart(2, '0')}<span>s</span>`;
         }
 
         // Add to Calendar Functionality
@@ -1099,7 +1152,7 @@
                 "DTSTAMP:" + new Date().toISOString().replace(/-|:|\.\d+/g, ''),
                 "DTSTART:20240925T130000Z", // Updated start date and time
                 "DTEND:20240926T130000Z",   // Updated end date and time
-                "SUMMARY:Capital One and Khan Academy presents: Let’s go Set a World Record",
+                "SUMMARY:Capital One and Khan Academy presents: Let's go Set a World Record",
                 "DESCRIPTION:Join us for an exciting event where we aim to set a World record together! Stay tuned for more details about the event.",
                 "LOCATION:Placeholder Location",
                 "END:VEVENT",
@@ -1132,6 +1185,44 @@
                 });
             }
         });
+
+        function pauseTimer() {
+            isPaused = true;
+            document.getElementById('overlayTitle').textContent = 'Timer Paused';
+            document.getElementById('overlayMessage').textContent = "You've navigated away from the page. Click the button below to resume.";
+            document.getElementById('resumeTimerButton').style.display = 'block';
+            document.getElementById('pauseOverlay').style.display = 'flex';
+        }
+
+        function showResumeIndicator() {
+            document.getElementById('overlayTitle').textContent = 'Your Session Will Resume Now';
+            document.getElementById('overlayMessage').textContent = '';
+            document.getElementById('resumeTimerButton').style.display = 'none';
+            document.getElementById('pauseOverlay').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('pauseOverlay').style.display = 'none';
+                resumeTimer();
+            }, 2000); // Show for 2 seconds
+        }
+
+        function resumeTimer() {
+            isPaused = false;
+            document.getElementById('pauseOverlay').style.display = 'none';
+        }
+
+        // Event listeners for page visibility change
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden && !timerDone) {
+                wasHidden = true;
+                pauseTimer();
+            } else if (wasHidden && !document.hidden && !timerDone) {
+                wasHidden = false;
+                showResumeIndicator();
+            }
+        });
+
+        // Event listener for the resume button in the overlay
+        document.getElementById('resumeTimerButton').addEventListener('click', showResumeIndicator);
 
     </script>
 
