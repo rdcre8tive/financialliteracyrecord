@@ -215,7 +215,7 @@
 
         h3 {
             color: #005a8c;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 300;
         }
 
@@ -324,14 +324,17 @@
             font-size: 5em;
             margin-top: 20px;
             color: #013D5B;
-            letter-spacing: -0.02em; /* Slightly increase space between characters */
+            letter-spacing: -0.02em;
+            /* Slightly increase space between characters */
         }
 
         #countdown span {
             font-weight: 200;
             font-size: 0.5em;
-            margin-right: 0.3em; /* Increase space after each letter */
-            margin-left: 0.1em; /* Add a small space before each letter */
+            margin-right: 0.3em;
+            /* Increase space after each letter */
+            margin-left: 0.1em;
+            /* Add a small space before each letter */
         }
 
         add-to-calendar-button.add-to-calendar.atcb-light {
@@ -340,7 +343,6 @@
             align-items: center;
             margin: 0 auto;
         }
-
         .sticky-image {
             position: fixed;
             /* Stick it to the viewport */
@@ -350,7 +352,7 @@
             /* Align to the right edge */
             width: 20%;
             /* Adjust the width as needed */
-            z-index: -1000;
+            z-index: -10;
             /* Ensure it's on top of other content */
         }
 
@@ -365,9 +367,11 @@
             /* Adjust for vertical centering */
             width: 4%;
             /* Adjust the width as needed */
-            z-index: 1000;
+            z-index: -10;
             /* Ensure it's on top of other content */
         }
+
+   
 
         .button.button-outline:hover {
             background-color: #005a8c;
@@ -517,11 +521,11 @@
             }
 
             .sticky-image {
-                width: 15%;
+                width: 35%;
             }
 
             .sticky-image-right {
-                width: 3%;
+                width: 8%;
             }
 
             #mainGraphic {
@@ -567,6 +571,34 @@
                 display: block;
                 /* Ensure block display to avoid cutoff */
             }
+
+
+
+            img[alt="Car Buying"] {
+                float: right;
+                margin: 0 0 10px 20px;
+                width: 180px;
+                height: auto;
+            }
+
+            img[alt="debt"] {
+                float: none;
+                display: block;
+                margin: 0 auto 20px;
+                width: 140px;
+                /* Smaller size for mobile */
+            }
+
+            #pre-instructions {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h3 {
+                color: #005a8c;
+                font-weight: 300;
+                font-size: 13px;
+            }
         }
 
         /* Added styles for the pause overlay */
@@ -576,7 +608,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 90, 140, 0.95); /* Capital One blue with high opacity */
+            background-color: rgba(0, 90, 140, 0.95);
+            /* Capital One blue with high opacity */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -609,73 +642,43 @@
         }
 
         .overlay-content {
-                padding: 20px;
-                max-width: 90%;
-            }
+            padding: 20px;
+            max-width: 90%;
+        }
 
-            #overlayTitle {
-                font-size: 24px;
-            }
+        #overlayTitle {
+            font-size: 24px;
+        }
 
-            #overlayMessage {
-                font-size: 16px;
-            }
+        #overlayMessage {
+            font-size: 16px;
+        }
 
-            #resumeTimerButton {
-                font-size: 16px;
-                padding: 8px 16px;
-            }
+        #resumeTimerButton {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
 
         #preContainer {
             color: #013D5B;
         }
+
         #preContainer {
-                color: #013D5B;
-            }
+            color: #013D5B;
+        }
 
         #countdown-text {
             color: #013D5B;
         }
 
         #countdown-text {
-                color: #013D5B;
-            }
-
-        img[alt="Car Buying"] {
-            float: right;
-            margin: 0 0 10px 20px;
-            width: 180px;
-            height: auto;
+            color: #013D5B;
         }
 
-        img[alt="Car Buying"] {
-                float: none;
-                display: block;
-                margin: 0 auto 20px;
-                width: 140px; /* Smaller size for mobile */
-            }
 
-            #module2 h1 {
-                text-align: center;
-            }
-
-        #pre-instructions {
-            /* Existing styles */
+        #module2 h1 {
+            text-align: center;
         }
-        #pre-instructions {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-        h3 {
-            color: #005a8c;
-            font-size: 13px;
-            font-weight: 300;
-        }
-        h3 {
-                font-size: 13px;
-            }
- 
     </style>
 </head>
 
@@ -772,7 +775,8 @@
             </ul>
             <p>By participating in this challenge, you will start on your financial literacy journey, while also being
                 part of setting a GUINNESS WORLD RECORD®.<br><br>
-                Hear below from Sal Khan why Financial Literacy is important and click the 'Continue to Instructions' button to take a step toward securing your financial future!</p>
+                Hear below from Sal Khan why Financial Literacy is important and click the 'Continue to Instructions'
+                button to take a step toward securing your financial future!</p>
 
             <div class="centered-content"><iframe width="560" height="315"
                     src="https://www.youtube.com/embed/Lys4EVugJmk?si=kPBKovYnSsJwHn7S" title="YouTube video player"
@@ -854,7 +858,7 @@
                         style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
                     <h3>Now you know what the 50:30:20 rule is, here's how you can use it to help build your budget.
                     </h3>
-                    <br>
+                    
 
                     <div class="centered-content"><iframe width="560" height="315"
                             src="https://www.youtube.com/embed/qQLLDPAEzT0?si=D6qJea2LhiCscjIC"
@@ -906,7 +910,7 @@
                     <h3>Now that you have a better idea about the car buying process, let's learn how to calculate a car
                         payment.
                     </h3>
-                    <br>
+                  
 
                     <div class="centered-content">
                         <iframe width="560" height="315"
@@ -936,7 +940,7 @@
                     <img src="yellow.svg" alt="spark"
                         style="float: left; margin:.7em 0 0 0; min-width: 100px; height: 70px;">
                     <h3>College is a big investment, let's take a look at what factors into how much it costs. </h3>
-                    <br>
+                  
                     <div class="centered-content">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/9TtKUydRfDM?si=l2WM8H1c6vCaf3E5"
@@ -1140,7 +1144,7 @@
         }
 
 
-        const startDate = new Date('2024-09-02T13:00:00'); // Set your desired start date and time here
+        const startDate = new Date('2024-09-23T13:00:00'); // Set your desired start date and time here
         const endDate = new Date('2024-09-24T13:00:00');   // Make sure endDate is AFTER startDate
 
 
@@ -1190,7 +1194,7 @@
             const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown').innerHTML = 
+            document.getElementById('countdown').innerHTML =
                 `${daysLeft.toString().padStart(2, '0')}<span>d</span>${hoursLeft.toString().padStart(2, '0')}<span>h</span>${minutesLeft.toString().padStart(2, '0')}<span>m</span>${secondsLeft.toString().padStart(2, '0')}<span>s</span>`;
         }
 
@@ -1273,7 +1277,7 @@
         }
 
         // Event listeners for page visibility change
-        document.addEventListener('visibilitychange', function() {
+        document.addEventListener('visibilitychange', function () {
             if (isEventActive() && isCurrentContainerVisible()) {
                 if (document.hidden && !timerDone) {
                     wasHidden = true;
@@ -1286,7 +1290,7 @@
         });
 
         // Event listener for the resume button in the overlay
-        document.getElementById('resumeTimerButton').addEventListener('click', function() {
+        document.getElementById('resumeTimerButton').addEventListener('click', function () {
             if (isEventActive() && isCurrentContainerVisible()) {
                 showResumeIndicator();
             }
@@ -1299,18 +1303,20 @@
             <b onclick="resetTimer()">Disclosures and Important Information</b><br>
             Your participation in the Financial Literacy Lesson for the purpose of the world record attempt does not
             constitute completion of Khan Academy coursework. Should you wish to do so, you can continue the course on
-            <a href="http://KhanAcademy.org" style="color: inherit" target="_blank"> KhanAcademy.org</a>. The content for the Financial Literacy Lesson is prepared and owned by Khan Academy, and
+            <a href="http://KhanAcademy.org" style="color: inherit" target="_blank"> KhanAcademy.org</a>. The content
+            for the Financial Literacy Lesson is prepared and owned by Khan Academy, and
             Khan Academy is a registered trademark of Khan Academy Inc.<br>
             <br>
             GUINNESS WORLD RECORDS® and the GUINNESS WORLD RECORDS® Logo are registered trademarks of GUINNESS WORLD
             RECORDS® Limited.
             <br>
             ©2024 Capital One &nbsp;&nbsp;
-            <a style="color: inherit" href="https://www.capitalone.com/privacy/"  target="_blank"> Privacy </a>&#124;&nbsp;<a
-                style="color: inherit"
-                href="https://www.capitalone.com/privacy/online-privacy-policy/#collecting-using-sharing-information-accordion-button-5"  target="_blank">
+            <a style="color: inherit" href="https://www.capitalone.com/privacy/" target="_blank"> Privacy
+            </a>&#124;&nbsp;<a style="color: inherit"
+                href="https://www.capitalone.com/privacy/online-privacy-policy/#collecting-using-sharing-information-accordion-button-5"
+                target="_blank">
                 AdChoices</a> &#124;&nbsp;<a style="color: inherit"
-                href="https://www.capitalone.com/digital/terms-conditions/"  target="_blank"> Terms & Conditions </a>
+                href="https://www.capitalone.com/digital/terms-conditions/" target="_blank"> Terms & Conditions </a>
         </div>
     </footer>
 
