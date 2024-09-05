@@ -708,7 +708,7 @@
                         options="'Apple','Google','Microsoft365','Outlook.com','Yahoo'" location="Online"
                         startDate="2024-09-23" endDate="2024-09-24" startTime="13:00" endTime="13:00"
                         timeZone="America/Chicago"
-                        description="Over the next 24 hours, take 30 minutes to participate in Capital One and Khan Academy's  GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you'll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://bit.ly/gwr-khan-general ">
+                        description="Over the next 24 hours, take 30 minutes to participate in Capital One's GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you'll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://www.financialliteracycourse.com">
 
                         <button id="add-to-calendar">Add to Calendar</button>
                         <button id="startButton" class="button" onclick="showPreInstructions()">Get Started</button>
@@ -1196,12 +1196,12 @@
                 "DTSTART:20240923T130000Z", // Updated start date and time
                 "DTEND:20240924T130000Z",   // Updated end date and time
                 "SUMMARY:Reminder: Participate in World Record Challenge",
-                "DESCRIPTION:Over the next 24 hours, take 30 minutes to participate in Capital One and Khan Academy's GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you'll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://www.financialliteracyrecord.com",
+                "DESCRIPTION:Over the next 24 hours, take 30 minutes to participate in Capital One's GUINNESS WORLD RECORD® attempt for the most users to take an online financial literacy lesson in 24 hours! Complete all three modules on financial topics - budgeting and saving, buying a car, and paying for college. Upon completion you'll receive a certificate for download and a redemption code for a complimentary handcrafted beverage at a Capital One Café. Reminder: Set a notification to remind yourself to log in and participate! Access the course here: http://www.financialliteracycourse.com",
                 "LOCATION:Placeholder Location", 
                 "END:VEVENT",
                 "END:VCALENDAR"
             ].join("\n");
-
+ 
             let blob = new Blob([icsContent], { type: 'text/calendar' });
             let link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
