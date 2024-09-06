@@ -747,7 +747,7 @@
 
 
         <div id="pre-instructions" class="white-box">
-            <h2>Our Partnership with Khan Academy</h2>
+            <h2>Our Collaboration with Khan Academy</h2>
             <p>Capital One is supporting Khan Academy's free Financial Literacy course which breaks down complex
                 financial concepts into a series of self-paced units. At Capital One, we believe that people deserve to
                 feel confident, capable and in control when it comes to their money—and we know that financial literacy
@@ -974,8 +974,8 @@
 
     <script>
         let timer;
-        let seconds = 30 * 60; // Set to 30 minutes (1800 seconds)
-        const totalTime = 30 * 60; // 30 minutes in seconds
+        let seconds = 5; // Set to 30 minutes (1800 seconds)
+        const totalTime = 5; // 30 minutes in seconds
         let currentModule = 1;
         let timerDone = false;
         let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
@@ -1281,6 +1281,25 @@
                 showResumeIndicator();
             }
         });
+
+
+
+
+// In the parent window
+window.addEventListener('message', linkMessage);
+
+function linkMessage(event) {
+    if (event.data && event.data.url) {
+        const a = document.createElement('a');
+        a.href = event.data.url;
+        a.download = ''; 
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+}
+
 
     </script>
 
