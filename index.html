@@ -978,7 +978,7 @@
         const totalTime = 5; // 30 minutes in seconds
         let currentModule = 1;
         let timerDone = false;
-        let completionCode = 'GWR' + Math.floor(Math.random() * 1000);
+        let completionCode = generateCompletionCode();
         let isPaused = false;
         let wasHidden = false;
 
@@ -1300,6 +1300,15 @@ function linkMessage(event) {
     }
 }
 
+function generateCompletionCode() {
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let prefix = '';
+    for (let i = 0; i < 3; i++) {
+        prefix += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    const numbers = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+    return prefix + numbers;
+}
 
     </script>
 
