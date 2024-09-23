@@ -153,22 +153,27 @@
             const timerDisplay = document.getElementById('timer');
             const now = new Date();
 
-            // Target time: Set this in the format "HH:mm" (24-hour clock)
-            const targetTimeString = "19:30"; // Example: 7:30 PM
+            // Set your desired target date and time here (for testing, set to a near future date)
+            const targetYear = 2024; // Change this to your desired year
+            const targetMonth = 8; // Change this to your desired month (0-indexed, 8 = September)
+            const targetDay = 24; // Change this to your desired day
+            const targetHour = 13; // Change this to your desired hour (24-hour format)
+            const targetMinute = 0; // Change this to your desired minute
+            const targetSecond = 0; // Change this to your desired second
 
-            const [targetHours, targetMinutes] = targetTimeString.split(':').map(Number);
+            const targetTime = new Date(targetYear, targetMonth, targetDay, targetHour, targetMinute, targetSecond);
 
-            const targetTime = new Date();
-            targetTime.setHours(targetHours, targetMinutes, 0, 0);
+            console.log("Current Time:", now); // Debugging line
+            console.log("Target Time:", targetTime); // Debugging line
 
             const timeDiff = targetTime - now;
+
+            console.log("Time Difference (ms):", timeDiff); // Debugging line
 
             if (timeDiff > 0) {
                 const hours = Math.floor(timeDiff / (1000 * 60 * 60));
                 const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff
-                    % (1000 * 60)) / 1000);
-
+                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
                 timerDisplay.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
             } else {
@@ -184,17 +189,17 @@
 
         // Usage
         const accessToken = '443b527c757e4dca32417f3eb57d876c246e936e';
-        const links = ['bit.ly/gwr-module-start', 'bit.ly/gwr-module-complete'];
+        const links = ['bit.ly/gwr-begin', 'bit.ly/gwr-complete'];
 
         // Set up the initial display and start the update interval
         (async function () {
             // Initial update of numbers and then every 5 seconds
             await updateNumbers(accessToken, links);
-            setInterval(() => updateNumbers(accessToken, links), 900000);
+            setInterval(() => updateNumbers(accessToken, links), 5000); // Update every 5 seconds
 
             // Initial update of the timer and then every second
             updateTimer();
-            setInterval(updateTimer, 1000);
+            setInterval(updateTimer, 1000); // Update every second
         })();
     </script>
 </body>
